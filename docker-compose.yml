@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.2.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+  phpMyAdmin:
+    image: phpmyadmin:5.2.1
+    ports:
+      - 8085:80
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+
+   
