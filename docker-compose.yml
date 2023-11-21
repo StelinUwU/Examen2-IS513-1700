@@ -4,9 +4,11 @@ services:
     image: mysql:8.2.0
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: carwash
       MYSQL_USER: test
-      MYSQL_PASSWORD: test
+      MYSQL_PASSWORD:   
+    ports:
+      - 3306:3306
   phpMyAdmin:
     image: phpmyadmin:5.2.1
     ports:
